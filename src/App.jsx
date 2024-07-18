@@ -3,6 +3,7 @@ import {Routes,Route,BrowserRouter,Link} from "react-router-dom"
 import {Container,Navbar,Nav} from "react-bootstrap"
 import ListarProdutos from "./Pages/ListarProdutos.jsx"
 import CadastrarProduto from "./Pages/CadastrarProduto.jsx"
+import EditarProduto from "./Pages/EditarProduto.jsx"
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<ListarProdutos/>}> </Route>
         <Route path="/cadastrar" element={<CadastrarProduto/>}> </Route>
+        <Route path="/editar/:id" element={<EditarProduto/>}> </Route>
       </Routes>
       </BrowserRouter>
       

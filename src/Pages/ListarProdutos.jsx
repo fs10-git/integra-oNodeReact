@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from "react"
-import { getData } from "../services/services"
+import { getData, deleteData } from "../services/services"
 import { Link } from "react-router-dom"
 import { Table,Button } from "react-bootstrap"
 
@@ -13,6 +13,12 @@ function ListarProdutos() {
     useEffect(() => {
         fetchProdutos()
     },[])
+
+    const deleteProdutos = async (id) => {
+        await deleteData(id)
+        fetchProdutos()
+    }
+
   return (
     <>
         <h1>Tabela De Produtos</h1>
@@ -45,7 +51,7 @@ function ListarProdutos() {
                         <Link to={`/editar/${produtos.id}`}> 
                             <Button variant="primary">Editar</Button>
                         </Link>
-                        <Button variant="danger">Deletar</Button>
+                        <Button variant="danger" onClick={() => deleteProdutos (produtos.id)}>Deletar</Button>
                     </td>
                 </tr>
             ))}
