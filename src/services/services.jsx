@@ -10,3 +10,11 @@ export const getData = async () => {
 export const createData = async (produto) => {
     return await axios.post(`${API_URL}/produtos/create`,produto)
 }
+
+export const deleteData = async (id) => {
+    return await axios.delete(`${API_URL}/produtos/delete/${id}`)
+}
+
+export const updateData = async (id,produtos) => {
+    return await axios.put(`${API_URL}/produtos/update/${id}`, produtos)
+}
