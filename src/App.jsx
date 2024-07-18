@@ -2,6 +2,7 @@ import React from "react"
 import {Routes,Route,BrowserRouter,Link} from "react-router-dom"
 import {Container,Navbar,Nav} from "react-bootstrap"
 import ListarProdutos from "./Pages/ListarProdutos.jsx"
+import CadastrarProduto from "./Pages/CadastrarProduto.jsx"
 function App() {
 
   return (
@@ -13,7 +14,7 @@ function App() {
         <Navbar.Collapse aria-controls="basic-navbar-nav" >
           <Nav>
             <Nav.Link className="mr-auto">Listar Produtos</Nav.Link>
-            <Nav.Link className="mr-auto">Cadastrar  Produtos</Nav.Link>
+            <Nav.Link to="/cadastrar" className="mr-auto">Cadastrar  Produtos</Nav.Link>
           </Nav>
         </Navbar.Collapse >
       </Navbar>
@@ -21,6 +22,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<ListarProdutos/>}> </Route>
+        <Route path="/cadastrar" element={<CadastrarProduto/>}> </Route>
       </Routes>
       </BrowserRouter>
       
